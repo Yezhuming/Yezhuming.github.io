@@ -26,6 +26,10 @@
   
     <link rel="icon" href="/img/favicon.png">
   
+  
+  <link rel="stylesheet" href="/lib/gitalk/gitalk.css">
+  <script src="/lib/gitalk/gitalk.min.js"></script>
+  
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
   <style type="text/css">
   
@@ -286,26 +290,25 @@
 
 
   
-     <div id="gitalk-container"></div>
-     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
-<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
-
-<script type="text/javascript">
-    var gitalk = new Gitalk({
+    <div class="gitalk">
+    <div id="gitalk-container"></div>
+    <script type="text/javascript">
+        const gitalk = new Gitalk({
             clientID: '2d78d01dff0a8d0029d8',
             clientSecret: 'e6a8eca4dcf69d7c61dc855c48785ff1af02f67b',
             repo: 'gitalk-comments',
             owner: 'yezhuming',
-            admin: [&#39;yezhuming&#39;],
+            admin: ,
             id: location.pathname,
             perPage: 10,
             pagerDirection: 'last',
             createIssueManually: true,
             enableHotKey: true
-        });
-
-    gitalk.render('gitalk-container')
-</script>
+        })
+ 
+        gitalk.render('gitalk-container')
+    </script>
+</div>
   
   
   
