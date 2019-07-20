@@ -286,26 +286,26 @@
 
 
   
-     <div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="hello-world" data-title="Hello World" data-url="http://yoursite.com/2019/07/18/hello-world/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"false"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
      <div id="gitalk-container"></div>
+     <link rel="stylesheet" href="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.css">
+<script src="//cdn.bootcss.com/gitalk/1.5.0/gitalk.min.js"></script>
+
+<script type="text/javascript">
+    var gitalk = new Gitalk({
+            clientID: '2d78d01dff0a8d0029d8',
+            clientSecret: 'e6a8eca4dcf69d7c61dc855c48785ff1af02f67b',
+            repo: 'gitalk-comments',
+            owner: 'yezhuming',
+            admin: [&#39;yezhuming&#39;],
+            id: location.pathname,
+            perPage: 10,
+            pagerDirection: 'last',
+            createIssueManually: true,
+            enableHotKey: true
+        });
+
+    gitalk.render('gitalk-container')
+</script>
   
   
   
