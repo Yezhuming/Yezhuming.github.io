@@ -275,12 +275,8 @@
         repo: 'gitalk-comments',
         owner: 'yezhuming',
         admin: ['yezhuming'],
-        id: location.pathname,
-        perPage: 10,
-        pagerDirection: last,
         createIssueManually: true,
-        enableHotKey: true,
-        distractionFreeMode: false
+        distractionFreeMode: true
     });
  
     gitalk.render('gitalk-container')
