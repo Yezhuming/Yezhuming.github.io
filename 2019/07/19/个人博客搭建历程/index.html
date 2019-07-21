@@ -275,8 +275,8 @@
         repo: 'gitalk-comments',
         owner: 'yezhuming',
         admin: ['yezhuming'],
-        createIssueManually: true,
-        distractionFreeMode: true
+        id: location.pathname,
+        distractionFreeMode: false
     });
  
     gitalk.render('gitalk-container')
