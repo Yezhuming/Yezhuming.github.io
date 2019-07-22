@@ -16,13 +16,13 @@
 <meta property="og:site_name" content="Shadow">
 <meta property="og:description" content="不知为何突然就想搭个博客玩玩，在网上找了许多资料后决定用Hexo去搭建 自己的个人博客，然后部署到Github上,一路上磕磕碰碰，但是还好完成了。本文详细记录了搭建博客的每个步骤，对博客的搭建进行一个全面的总结。">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/assets/cmd_node.png">
+<meta property="og:image" content="http://note.youdao.com/noteshare?id=b4ad7f8ac87fa6a3d4d69d33a917b818&sub=C8C3C811E04346EB95AB8D51448A1618">
 <meta property="og:image" content="http://yoursite.com/assets/cmd_git.png">
-<meta property="og:updated_time" content="2019-07-22T12:51:58.976Z">
+<meta property="og:updated_time" content="2019-07-22T13:08:50.868Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="个人博客搭建历程">
 <meta name="twitter:description" content="不知为何突然就想搭个博客玩玩，在网上找了许多资料后决定用Hexo去搭建 自己的个人博客，然后部署到Github上,一路上磕磕碰碰，但是还好完成了。本文详细记录了搭建博客的每个步骤，对博客的搭建进行一个全面的总结。">
-<meta name="twitter:image" content="http://yoursite.com/assets/cmd_node.png">
+<meta name="twitter:image" content="http://note.youdao.com/noteshare?id=b4ad7f8ac87fa6a3d4d69d33a917b818&sub=C8C3C811E04346EB95AB8D51448A1618">
   
     <link rel="alternative" href="/atom.xml" title="Shadow" type="application/atom+xml">
   
@@ -190,7 +190,7 @@
 <h1 id="2-搭建博客第一步：安装相关环境"><a href="#2-搭建博客第一步：安装相关环境" class="headerlink" title="2.搭建博客第一步：安装相关环境"></a>2.搭建博客第一步：安装相关环境</h1><h2 id="2-1-安装Node-js"><a href="#2-1-安装Node-js" class="headerlink" title="2.1 安装Node.js"></a>2.1 安装Node.js</h2><p>Node.js是一个事件驱动I/O服务端JavaScript环境，基于Google的V8引擎，V8引擎执行Javascript的速度非常快，性能非常好。<br>Node.js 安装包及源码下载地址为：<a href="https://nodejs.org/zh-cn/download/" target="_blank" rel="noopener">https://nodejs.org/zh-cn/download/</a><br>在上面提供的网站上选择一个适合自己系统的安装包下载，安装过程除了目录可能需要修改(默认是装在C盘的)，其他基本就是一直Next下去直到安装完成。<br>安装完成后可以通过按Win+R并在输入框中输入cmd打开命令行窗口，并在里面输入“node -v”来测试是否安装成功。<br>命令如下，出现版本提示表示安装成功:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br><span class="line">v10.16.0</span><br></pre></td></tr></table></figure>
 
-<p><img src="/assets/cmd_node.png" alt="cmd_node"></p>
+<p><img src="http://note.youdao.com/noteshare?id=b4ad7f8ac87fa6a3d4d69d33a917b818&sub=C8C3C811E04346EB95AB8D51448A1618" alt="cmd_node"></p>
 <p>因为后续需要用npm安装模块，但是国内直接使用 npm 的官方镜像是非常慢的，所以我使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
