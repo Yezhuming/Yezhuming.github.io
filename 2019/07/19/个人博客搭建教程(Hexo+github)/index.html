@@ -98,14 +98,14 @@
 				
 					<a class="github" target="_blank" href="https://github.com/yezhuming" title="github"><i class="icon-github"></i></a>
 		        
-					<a class="mail" target="_blank" href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=&#121;&#122;&#x6d;&#105;&#110;&#103;&#48;&#55;&#x36;&#57;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#109" title="mail"><i class="icon-mail"></i></a>
+					<a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=OEFCVVFWXwgPDgF4SUkWW1dV" title="mail"><i class="icon-mail"></i></a>
 		        
 					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 		        
 			</div>
 			<!--音乐播放插件-->
 			<div style="margin-top:30px;">
-				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=240 height=52 src="//music.163.com/outchain/player?type=2&id=1376653715&auto=1&height=32"></iframe>
+				<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=240 height=52 src="//music.163.com/outchain/player?type=2&id=1376653715&auto=0&height=32"></iframe>
 			</div>
 		</nav>
 	</header>		
@@ -139,7 +139,7 @@
 					
 						<a class="github" target="_blank" href="https://github.com/yezhuming" title="github"><i class="icon-github"></i></a>
 			        
-						<a class="mail" target="_blank" href="https://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=&#121;&#122;&#x6d;&#105;&#110;&#103;&#48;&#55;&#x36;&#57;&#64;&#x71;&#113;&#46;&#99;&#x6f;&#109" title="mail"><i class="icon-mail"></i></a>
+						<a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=OEFCVVFWXwgPDgF4SUkWW1dV" title="mail"><i class="icon-mail"></i></a>
 			        
 						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 			        
@@ -473,17 +473,18 @@
   
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
 
 <div id="gitalk-container" style="width: 1160px;margin-left: 30px;"></div>
 <script type="text/javascript">
-    var title = location.pathname.substr(0, 50);
+    //var title = location.pathname.substr(0, 50);
     var gitalk = new Gitalk({
         clientID: '6bee0c40c2186cd3d721',
         clientSecret: 'a97ade95a44b2f392276fb1a80953cd65a250482',
         repo: 'gitalk-comments',
         owner: 'yezhuming',
         admin: ['yezhuming'],
-        id: title,
+        id: md5(location.pathname),
         pagerDirection: 'first',
         distractionFreeMode: true,
         createIssueManually: true
