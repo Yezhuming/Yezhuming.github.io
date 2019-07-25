@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://yezhuming.github.io/archives/2b457aec.htmlhexo_config-deployment.png">
 <meta property="og:image" content="https://yezhuming.github.io/archives/2b457aec.htmlgithub_clonessh.png">
 <meta property="og:image" content="https://yezhuming.github.io/archives/2b457aec.htmlarticle_deploy.png">
-<meta property="og:updated_time" content="2019-07-24T01:37:30.228Z">
+<meta property="og:updated_time" content="2019-07-25T04:11:19.477Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="个人博客搭建教程(Hexo+github)">
 <meta name="twitter:description" content="&amp;#x4E0D;&amp;#x77E5;&amp;#x4E3A;&amp;#x4F55;&amp;#x7A81;&amp;#x7136;&amp;#x5C31;&amp;#x60F3;&amp;#x642D;&amp;#x4E2A;&amp;#x535A;&amp;#x5BA2;&amp;#x73A9;&amp;#x73A9;&amp;#xFF0C;&amp;#x5728;&amp;#x7F51;&amp;#x4E0A;&amp;#x627E;&amp;#x4E86;&amp;#x8BB8;&amp;#x591A;&amp;#x8D44;&amp;#x6599;&amp;#x540E">
@@ -77,6 +77,10 @@
 			
 				<li><a href="/">主页</a></li>
 	        
+				<li><a href="/categories">分类</a></li>
+	        
+				<li><a href="/archives">归档</a></li>
+	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
@@ -100,8 +104,6 @@
 					<a class="github" target="_blank" href="https://github.com/yezhuming" title="github"><i class="icon-github"></i></a>
 		        
 					<a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=OEFCVVFWXwgPDgF4SUkWW1dV" title="mail"><i class="icon-mail"></i></a>
-		        
-					<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
 		        
 			</div>
 			<!--音乐播放插件-->
@@ -133,6 +135,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -142,16 +148,18 @@
 			        
 						<a class="mail" target="_blank" href="http://mail.qq.com/cgi-bin/qm_share?t=qm_mailme&email=OEFCVVFWXwgPDgF4SUkWW1dV" title="mail"><i class="icon-mail"></i></a>
 			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss"><i class="icon-rss"></i></a>
-			        
 				</div>
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 100%"><a href="/">主页</a></li>
+					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
+		        
+					<li style="width: 33.333333333333336%"><a href="/archives">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -541,7 +549,7 @@
 			<script>
 				var now = new Date(); 
 				function createtime() { 
-					var grt= new Date("7/19/2019 14:00:00");//此处修改你的建站时间或者网站上线时间 
+					var grt= new Date("7/19/2019 14:00:00");  //此处修改你的建站时间:月/日/年 24小时制
 					now.setTime(now.getTime()+250); 
 					days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
 					hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
