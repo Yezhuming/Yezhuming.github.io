@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://yezhuming.github.io/"/>
-  <updated>2019-07-26T09:08:25.631Z</updated>
+  <updated>2020-04-10T08:10:26.019Z</updated>
   <id>https://yezhuming.github.io/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Nodejs Express遇到的坑</title>
+    <link href="https://yezhuming.github.io/archives/81ba7b8f.html"/>
+    <id>https://yezhuming.github.io/archives/81ba7b8f.html</id>
+    <published>2020-04-10T07:51:38.000Z</published>
+    <updated>2020-04-10T08:10:26.019Z</updated>
+    
+    <content type="html"><![CDATA[<p style="text-indent:2em">做项目用Express框架搭服务端解决跨域问题的时候遇到的一个坑，app.all()竟然不生效，记录下来防止以后再犯😅</p><a id="more"></a><h1 id="解决跨域-CORS"><a href="#解决跨域-CORS" class="headerlink" title="解决跨域(CORS)"></a>解决跨域(CORS)</h1><p>在app.js中加入以下代码解决跨域问题相信大家都知道：</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">app.all(<span class="string">'*'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  res.setHeader(<span class="string">'Access-Control-Allow-Origin'</span>, <span class="string">'*'</span>)</span><br><span class="line">  res.setHeader(<span class="string">'Access-Control-Allow-Methods'</span>, <span class="string">'GET,PUT,POST,DELETE,OPTIONS'</span>)</span><br><span class="line">  res.setHeader(<span class="string">'Access-Control-Allow-Headers'</span>, <span class="string">'Content-type,Accept,X-Access-Token,X-Key'</span>)</span><br><span class="line">  <span class="keyword">if</span> (req.method == <span class="string">'OPTIONS'</span>) &#123;</span><br><span class="line">    res.status(<span class="number">200</span>).end()</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    next()</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure><p>但是我却遇到了一个问题，返回的报文响应头部却没有设置的这三个字段，只有在返回数据的前面设置头部字段才生效，后来发现问题出在这段代码加入的地方。我把它放在了<code>app.use()</code>路由处理的后面了，即响应报文发出去了才设置报文头，这当然没有效果。</p><p>因为Express是按照定义的顺序执行中间件，因此只要将<code>app.all()</code>放到路由处理前面就好了<br><img src="/archives/81ba7b8f/responseHeader.jpg" alt="example"></p><p>参考资料：<a href="https://stackoverflow.com/questions/23892171/app-all-doesnt-fire-on-static-file-access" target="_blank" rel="noopener">https://stackoverflow.com/questions/23892171/app-all-doesnt-fire-on-static-file-access</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p style=&quot;text-indent:2em&quot;&gt;
+做项目用Express框架搭服务端解决跨域问题的时候遇到的一个坑，app.all()竟然不生效，记录下来防止以后再犯😅
+&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="Node" scheme="https://yezhuming.github.io/tags/Node/"/>
+    
+      <category term="Express" scheme="https://yezhuming.github.io/tags/Express/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于浏览器中的clientWidth,offsetWidth,scrollWidth等宽度总结</title>
+    <link href="https://yezhuming.github.io/archives/6b44569f.html"/>
+    <id>https://yezhuming.github.io/archives/6b44569f.html</id>
+    <published>2019-10-26T06:57:43.000Z</published>
+    <updated>2019-10-26T09:07:32.610Z</updated>
+    
+    <content type="html"><![CDATA[<p style="text-indent:2em">由于在看图片懒加载时遇到怎么判断图片进入可视窗口的问题，就总结一下在浏览器上的各种宽度问题。</p><a id="more"></a><h3 id="一、网页的各种宽度"><a href="#一、网页的各种宽度" class="headerlink" title="一、网页的各种宽度"></a>一、网页的各种宽度</h3><ul><li><p>网页可见区域宽高：<br>  <code>document.body.clientWidth</code><br>  <img src="/archives/6b44569f/%E5%85%B3%E4%BA%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84clientWidth-offsetWidth-scrollWidth%E7%AD%89%E5%AE%BD%E5%BA%A6%E6%80%BB%E7%BB%93%5Cbody.clientWidth.jpg" alt="body.clientWidth"><br>  从图中可以看出clientWidth是不包括body的边框和右侧滚动条的。<br>  <code>document.body.clientHeight</code>是整个body的高度，当然也是不包括边框的。</p><p>  <code>document.body.offsetWidth</code>包括body的边框，即offsetWidth=clientWidth+border<br>  <img src="/archives/6b44569f/%E5%85%B3%E4%BA%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84clientWidth-offsetWidth-scrollWidth%E7%AD%89%E5%AE%BD%E5%BA%A6%E6%80%BB%E7%BB%93%5Cbody.offsetWidth.jpg" alt="body.clientWidth"><br>  <code>document.body.offsetHeight</code>是整个body的高度(包括边框)。</p></li></ul><h3 id="二、元素的各种宽高"><a href="#二、元素的各种宽高" class="headerlink" title="二、元素的各种宽高"></a>二、元素的各种宽高</h3><ul><li><p>clientWidth和clientHeight：<br>元素的clientWidth和clientHeight是指元素自身的宽高。<br><img src="/archives/6b44569f/%E5%85%B3%E4%BA%8E%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%AD%E7%9A%84clientWidth-offsetWidth-scrollWidth%E7%AD%89%E5%AE%BD%E5%BA%A6%E6%80%BB%E7%BB%93%5Cimg.clientWidth.jpg" alt="img.clientWidth"></p></li><li></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p style=&quot;text-indent:2em&quot;&gt;
+由于在看图片懒加载时遇到怎么判断图片进入可视窗口的问题，就总结一下在浏览器上的各种宽度问题。
+&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="JavaScript" scheme="https://yezhuming.github.io/tags/JavaScript/"/>
+    
+      <category term="元素尺寸" scheme="https://yezhuming.github.io/tags/%E5%85%83%E7%B4%A0%E5%B0%BA%E5%AF%B8/"/>
+    
+  </entry>
   
   <entry>
     <title>Vue学习笔记(一):v-model的原理</title>
